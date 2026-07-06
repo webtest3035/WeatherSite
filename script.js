@@ -21,6 +21,7 @@ cityInputSubmit.addEventListener("click", () => {
         return;
     }
 
+    getWeatherDate(city);
 
 });
 
@@ -37,7 +38,24 @@ async function getWeatherDate(city) {
 
         let data = await response.json();
 
-        console.log(data);
+        if (data.cod !== 200) {
+            alert("City not found");
+            return;
+        }
+
+        cityName.textContent = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
+
+        weatherIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Weather Icon">`;
+
+        temprature.textContent = `${Math.floor(data.main.temp)}°C`;
+
+        description.textContent = `${data.weather[0].description}`
+
+        feelsLike.textContent = `Feels Like: ${data.main.feels_like}°C`;
+
+        humidity.textContent = `Humidity: ${data.main.humidity}%`;
+
+        windSpeed.textContent = `Wind Speed: ${data.wind.speed}M/S`;
 
     }
 
