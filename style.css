@@ -92,3 +92,28 @@ header {
     margin: 0rem 1rem;
     background-color: white;
 }
+
+@media (max-width:64rem) {
+
+    html {
+        font-size: 50%;
+    }
+}
+@media (max-width:48rem) {
+
+    html {
+        font-size: 37.5%;
+    }
+}
+@media (max-width:36rem) {
+
+    html {
+        font-size: 37.5%;
+    }
+}
+@media (max-width:36rem) {
+
+    html {
+        font-size: 25%;
+    }
+}
