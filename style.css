@@ -102,18 +102,12 @@ header {
 @media (max-width:48rem) {
 
     html {
-        font-size: 37.5%;
+        font-size: 45%;
     }
 }
 @media (max-width:36rem) {
 
     html {
-        font-size: 37.5%;
-    }
-}
-@media (max-width:36rem) {
-
-    html {
-        font-size: 25%;
+        font-size: 40%;
     }
 }
