@@ -8,6 +8,7 @@ let description = document.getElementById("description");
 let feelsLike = document.getElementById("feelsLike");
 let humidity = document.getElementById("humidity");
 let windSpeed = document.getElementById("windSpeed");
+const loading = document.getElementById("loading");
 
 
 cityInputSubmit.addEventListener("click", () => {
@@ -28,20 +29,24 @@ cityInputSubmit.addEventListener("click", () => {
 
 async function getWeatherDate(city) {
 
+    showLoading();
+
     try {
 
         let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
 
-        if (!response.ok) {
-            throw new Error("Network Responce Is Not Ok");
+        if (response.status === 404) {
+            alert("City not found");
+            return;
+        }
+
+        if (response.status === 500) {
+            alert("Server error");
+            return;
         }
 
         let data = await response.json();
 
-        if (data.cod !== 200) {
-            alert("City not found");
-            return;
-        }
 
         cityName.textContent = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
 
@@ -63,4 +68,17 @@ async function getWeatherDate(city) {
         console.error("Error");
     }
 
+    finally {
+        hideLoading();
+    }
+
+}
+
+
+function showLoading() {
+    loading.style.display = "block";
+}
+
+function hideLoading() {
+    loading.style.display = "none";
 }

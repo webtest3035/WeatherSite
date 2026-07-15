@@ -93,18 +93,28 @@ header {
     background-color: white;
 }
 
+#loading {
+    display: none;
+    text-align: center;
+    font-size: 2rem;
+    margin: 10rem;
+}
+
+
 @media (max-width:64rem) {
 
     html {
         font-size: 50%;
     }
 }
+
 @media (max-width:48rem) {
 
     html {
         font-size: 45%;
     }
 }
+
 @media (max-width:36rem) {
 
     html {
