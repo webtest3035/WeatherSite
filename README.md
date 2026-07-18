@@ -7,3 +7,7 @@ Features :- Fetch weather data of any city anywhere in the world.
 Open The Project :- https://webtest3035.github.io/WeatherSite/
 
 Language Used :- HTML, CSS, JavaScript
+
+image :- 
+
+![Home Page](img/Weather Site.png)
