@@ -10,4 +10,4 @@ Language Used :- HTML, CSS, JavaScript
 
 image :- 
 
-![Home Page](img/Weather Site.png)
+![Home Page](img/Weather-Site.png)
